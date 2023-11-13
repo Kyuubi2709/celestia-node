@@ -2,7 +2,6 @@
 
 set -e
 
-if [[ ! -f ${NODE_STORE}/init ||  ! -f /home/celestia/init ]]; then
     if [[ -n "$NODE_STORE" ]]; then
         chmod 700 "${NODE_STORE}"
         chown -R celestia:celestia "${NODE_STORE}"
@@ -22,8 +21,6 @@ if [[ ! -f ${NODE_STORE}/init ||  ! -f /home/celestia/init ]]; then
           celestia "${NODE_TYPE}" init --p2p.network "${P2P_NETWORK}"
         fi
     fi
-    echo ""
-fi
-
+echo ""
 echo "Starting Celestia Node...."
 celestia $NODE_TYPE start
