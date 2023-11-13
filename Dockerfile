@@ -41,7 +41,6 @@ ENV P2P_NETWORK mocha
 RUN apt-get update && apt-get --assume-yes --no-install-recommends install \
         curl \
         bash \
-        sudo \
         jq \ 
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
