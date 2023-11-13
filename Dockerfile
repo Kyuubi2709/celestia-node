@@ -29,6 +29,7 @@ FROM debian:buster-slim
 
 # Read here why UID 10001: https://github.com/hexops/dockerfile/blob/main/README.md#do-not-use-a-uid-below-10000
 ARG UID=10001
+ARG GID=10001
 ARG USER_NAME=celestia
 
 ENV CELESTIA_HOME=/home/${USER_NAME}
