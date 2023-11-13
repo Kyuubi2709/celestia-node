@@ -26,4 +26,4 @@ if [[ ! -f ${NODE_STORE}/init ||  ! -f /home/celestia/init ]]; then
 fi
 
 echo "Starting Celestia Node...."
-celestia
+celestia $NODE_TYPE start
