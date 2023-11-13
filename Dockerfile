@@ -39,7 +39,7 @@ ENV P2P_NETWORK mocha
 
 # hadolint ignore=DL3018
 RUN uname -a &&\
-    apk update && apk add --no-cache \
+    apk update && apt add --no-cache \
         bash \
         sudo \
         curl \
