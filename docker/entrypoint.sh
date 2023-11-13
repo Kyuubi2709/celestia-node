@@ -21,6 +21,8 @@ set -e
           celestia "${NODE_TYPE}" init --p2p.network "${P2P_NETWORK}"
         fi
     fi
+
+
 echo ""
 echo "Starting Celestia Node...."
 celestia $NODE_TYPE start
