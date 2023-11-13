@@ -55,8 +55,6 @@ COPY --from=builder /src/./cel-key /bin/cel-key
 
 COPY --chown=${USER_NAME}:${USER_NAME} docker/entrypoint.sh /opt/entrypoint.sh
 
-USER ${USER_NAME}
-
 EXPOSE 2121
 
 ENTRYPOINT [ "/bin/bash", "/opt/entrypoint.sh" ]
