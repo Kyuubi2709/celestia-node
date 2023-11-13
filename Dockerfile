@@ -41,6 +41,7 @@ ENV P2P_NETWORK mocha
 RUN uname -a &&\
     apk update && apk add --no-cache \
         bash \
+        sudo \
         curl \
         jq \
     # Creates a user with $UID and $GID=$UID
