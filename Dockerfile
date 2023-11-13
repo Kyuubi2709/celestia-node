@@ -58,4 +58,3 @@ COPY --chown=${USER_NAME}:${USER_NAME} docker/entrypoint.sh /opt/entrypoint.sh
 EXPOSE 2121
 
 ENTRYPOINT [ "/bin/bash", "/opt/entrypoint.sh" ]
-CMD [ "celestia" ]
