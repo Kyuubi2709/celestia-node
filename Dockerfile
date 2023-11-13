@@ -37,20 +37,17 @@ ENV CELESTIA_HOME=/home/${USER_NAME}
 ENV NODE_TYPE bridge
 ENV P2P_NETWORK mocha
 
-# hadolint ignore=DL3018
-RUN uname -a &&\
-    apt update && apt add --no-cache \
+RUN apt-get update && apt-get --assume-yes --no-install-recommends install \
+        curl \
         bash \
         sudo \
-        curl \
-        jq \
-    # Creates a user with $UID and $GID=$UID
-    && adduser ${USER_NAME} \
-        -D \
-        -g ${USER_NAME} \
-        -h ${CELESTIA_HOME} \
-        -s /sbin/nologin \
-        -u ${UID}
+        jq \ 
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
+
+
+RUN groupadd --gid ${GID} celestia \
+  && useradd --create-home --no-log-init -u ${UID} -g ${GID} celestia
 
 # Copy in the binary
 COPY --from=builder /src/build/celestia /bin/celestia
